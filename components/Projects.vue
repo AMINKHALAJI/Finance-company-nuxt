@@ -15,7 +15,7 @@
             type="text"
             placeholder="Search for projects"
           /><button
-            @click="showFiltered"
+            @click="filteredProjects"
             class="bg-[#00df9a] text-black rounded-md font-medium w-48 ml-4 my-6 px-6 py-3"
           >
             Search
@@ -24,8 +24,8 @@
       </div>
     </div>
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      <div
+    <div v-if="!searchTerm" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div 
         v-for="project in projects"
         :key="project.id"
         class="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300"
@@ -33,21 +33,23 @@
         <h2 class="text-3xl font-bold text-center py-8">{{ project.title }}</h2>
         <p class="text-left text-xl font-sans">{{ project.description }}</p>
       </div>
+    </div>
 
-      <!-- <div
-        v-for="project in filteredProjects"
+    <div v-else class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div 
+        v-for="project in filteredProjects" 
         :key="project.id"
         class="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300"
       >
         <h2 class="text-3xl font-bold text-center py-8">{{ project.title }}</h2>
         <p class="text-left text-xl font-sans">{{ project.description }}</p>
-      </div> -->
+      </div>
     </div>
+
   </div>
 </template>
 
 <script setup>
-// import { ref, computed } from "vue";
 
 // const { data: projects } = await useFetch(
 //   "https://jsonplaceholder.typicode.com/posts?_limit=20"
@@ -185,11 +187,10 @@ const projects = [
 ];
 
 const searchTerm = ref("");
+
 const originalProjects = ref(projects).value;
 
-const filteredProjects = () => {
-  // console.log(searchTerm.value);
-  // console.log(originalProjects);
+const filteredProjects = computed (() => {
 
   return(originalProjects.filter((project) => {
     // Customize the conditions based on your search criteria
@@ -197,22 +198,9 @@ const filteredProjects = () => {
       project.title.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
       project.description.toLowerCase().includes(searchTerm.value.toLowerCase())
     );
+    
   })); 
-};
+});
 
-const showFiltered= () => {
-    
-    
-}
 
-// console.log(filteredProjects);
-
-// const searchProjects = () => {
-
-//   originalProjects = originalProjects.value.filter(project =>
-//     project.title.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-//     project.description.toLowerCase().includes(searchTerm.value.toLowerCase())
-//   );
-
-// };
 </script>
