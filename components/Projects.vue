@@ -16,7 +16,7 @@
             placeholder="Search for projects"
           /><button
             @click="filteredProjects"
-            class="bg-[#00df9a] text-black rounded-md font-medium w-48 ml-4 my-6 px-6 py-3"
+            class="bg-green-400 text-black rounded-md font-medium w-48 ml-4 my-6 px-6 py-3"
           >
             Search
           </button>

@@ -3,5 +3,6 @@
       <NuxtPage />
       <NavBar />
       <About/>
+      <Footer/>
     </div>
   </template>

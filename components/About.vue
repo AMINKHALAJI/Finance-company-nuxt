@@ -9,7 +9,7 @@
         <h1 class="md:text-4xl sm:text-3xl text-2xl font-bold py-2">
           Who Are We
         </h1>
-        <h2 class="text-green-400 my-3  font-bold">FINANCE COMPANY IS A FINANCIAL PLANNING COMPANY </h2>
+        <h2 class="text-green-400 my-3 font-sans font-bold">OUR COMPANY IS A FINANCIAL PLANNING COMPANY </h2>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi in,
           numquam laboriosam qui facere odit autem! Praesentium labore est
