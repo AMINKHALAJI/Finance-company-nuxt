@@ -6,10 +6,10 @@
         </h1>
         <div>
             <ul class=" text-white flex mt-3  sm:flex gap-2 sm:gap-6 mr-4 justify-between items-center">
-                <li><a href="/">Home</a></li>
-                <li><a href="about">About Us </a></li>
-                <li><a href="projects"> Projects</a> </li>
-                <li><a href="contact"> Contact Us</a></li>
+                <li><NuxtLink to="/">Home</NuxtLink></li>
+                <li><NuxtLink to="about">About Us </NuxtLink></li>
+                <li><NuxtLink to="projects"> Projects</NuxtLink> </li>
+                <li><NuxtLink to="contact"> Contact Us</NuxtLink></li>
             </ul>
         </div>
     </div>
